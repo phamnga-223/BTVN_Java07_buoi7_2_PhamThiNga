@@ -7,29 +7,29 @@ import java.util.Scanner;
 public class Application {
 
 	public static void main(String[] args) {
-		//Câu a
+		//Câu a: Viết hàm nhập, hàm xuất
 		int[] mang = nhapMang();
 		xuatMang(mang);
 		
-		//Câu b
+		//Câu b: Tìm số lớn nhất, vị trí của nó trong mảng
 		max(mang);
 		
-		//Câu c
+		//Câu c: Tìm số âm đầu tiên, vị trí của nó trong mảng
 		soAm(mang);
 		
-		//Câu d
+		//Câu d: Tìm số âm lớn nhất, vị trí của nó trong mảng
 		soAmMax(mang);
 		
-		//Câu e
+		//Câu e: Tính tổng các số chẵn
 		tongChan(mang);
 		
-		//Câu f
+		//Câu f: Đếm có bao nhiêu số âm
 		demSoAm(mang);
 		
-		//Câu g
+		//Câu g: Tổng các số âm
 		tongAm(mang);
 		
-		//Câu h
+		//Câu h: Cho người dùng nhập vào x, tìm x có trong mảng hay ko?
 		timX(mang);
 	}
 
@@ -75,7 +75,7 @@ public class Application {
 		//B2: Tìm vị trí số lớn nhất
 		for (int i = 0; i < mang.length; i++) {
 			if (max == mang[i]) {
-				indexes.add(i);
+				indexes.add(i + 1);
 			}
 		}
 		
@@ -91,7 +91,7 @@ public class Application {
 	public static void soAm(int[] mang) {
 		for (int i = 0; i < mang.length; i++) {
 			if (mang[i] < 0) {
-				System.out.println("Số âm đầu tiên là: " + mang[i] + ". Vị trí là: " + i);
+				System.out.println("Số âm đầu tiên là: " + mang[i] + ". Vị trí là: " + (i + 1));
 				return;
 			}
 		}
@@ -112,13 +112,17 @@ public class Application {
 		}
 		
 		//B2: Tìm số âm lớn nhất và vị trí trong mảng
+		if (listSoAm.size() == 0) {
+			System.out.println("Mảng không có số âm!");
+			return;
+		}		
 		int soAmMax = listSoAm.get(0);
 		for (int i:listSoAm) {
 			if (soAmMax < i) soAmMax = i;
 		}
 		for (int i = 0; i < mang.length; i++) {
 			if (mang[i] == soAmMax) {
-				indexes.add(i);
+				indexes.add(i + 1);
 			}
 		}
 		
@@ -128,6 +132,7 @@ public class Application {
 		for (int i:indexes) {
 			System.out.print(i + "\t");
 		}
+		System.out.println();
 	}
 	
 	public static void tongChan(int[] mang) {
