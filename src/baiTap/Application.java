@@ -75,7 +75,7 @@ public class Application {
 		//B2: Tìm vị trí số lớn nhất
 		for (int i = 0; i < mang.length; i++) {
 			if (max == mang[i]) {
-				indexes.add(i + 1);
+				indexes.add(i);
 			}
 		}
 		
@@ -91,7 +91,7 @@ public class Application {
 	public static void soAm(int[] mang) {
 		for (int i = 0; i < mang.length; i++) {
 			if (mang[i] < 0) {
-				System.out.println("Số âm đầu tiên là: " + mang[i] + ". Vị trí là: " + (i + 1));
+				System.out.println("Số âm đầu tiên là: " + mang[i] + ". Vị trí là: " + i);
 				return;
 			}
 		}
@@ -122,7 +122,7 @@ public class Application {
 		}
 		for (int i = 0; i < mang.length; i++) {
 			if (mang[i] == soAmMax) {
-				indexes.add(i + 1);
+				indexes.add(i);
 			}
 		}
 		
